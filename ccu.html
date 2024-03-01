@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+
+
+
+<html lang="zh-Hant-TW" xml:lang="zh-Hant">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="format-detection" content="telephone=no">
+  <title>智慧化 活動暨報名系統</title>
+
+  
+
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/uikit.almost-flat.min.css">
+  <link rel="stylesheet" href="/static/css/components/accordion.almost-flat.min.css">
+  <link rel="stylesheet" href="/static/css/components/dotnav.almost-flat.min.css">
+  <link rel="stylesheet" href="/static/css/components/form-advanced.almost-flat.min.css">
+  <link rel="stylesheet" href="/static/css/components/form-file.almost-flat.min.css">
+  <link rel="stylesheet" href="/static/css/components/sticky.almost-flat.min.css">
+  <link rel="stylesheet" href="/static/css/components/slider.min.css">
+  <link rel="stylesheet" href="/static/css/components/slidenav.min.css">
+  <link rel="stylesheet" href="/static/css/components/slideshow.min.css">
+  <link rel="stylesheet" href="/static/css/fontawesome-5.2.0-all.min.css">
+  <link rel="stylesheet" href="/static/css/fontawesome-5.2.0-svg-with-js.min.css">
+  <link rel="stylesheet" href="/static/css/animate-3.6.css">
+  <link rel="stylesheet" href="/static/css/monthly.css">
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="stylesheet" href="/static/css/delay.css">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/dev.css">
+  
+<style type="text/css">
+  @media (min-width: 960px){
+      .icon {
+      width: calc(100%/17);
+  }
+  }
+
+</style>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-9251803-15"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-9251803-15');
+  </script>
+</head>
+
+<body id="top" class="min_height100vhL bg_grey p-0">
+  <div class="gotoTop uk-visible-small" data-uk-sticky="{top:-250, animation: 'uk-animation-slide-top'}">
+    <a href="#top" title="Go to top"><i class="fas fa-chevron-up fa-fw"></i></a>
+  </div>
+  <div class="gotoTop uk-visible-small" data-uk-sticky="{top:-250, animation: 'uk-animation-slide-top'}"><a href="#top" title="Go to top"><i class="fas fa-chevron-up fa-fw"></i></a></div>
+  <header id="header" class="bg_white" data-uk-sticky="{top:-50, animation: 'uk-animation-slide-bottom', media: '(max-width: 959px)'}">
+    <div class="p-0 uk-container uk-container-center">
+      <div class="uk-grid uk-grid-collapse" data-uk-grid-margin>
+        <div class="bg_primary p-2 uk-width-large-1-4">
+          <div class="h-100 uk-grid uk-grid-small" data-uk-grid-margin>
+            <div class="uk-width-2-3 uk-width-medium-2-6 uk-width-large-1-1 uk-vertical-align">
+              <div class="text-lg-center uk-width-1-1 uk-vertical-align-middle">
+                <h1 class="uk-margin-remove">
+                  <a class="logo pr-2 uk-width-1-1" href="/">
+                    <img class="mw-100" alt="logo" title="logo" src="/static/img/ccu-logo.png">
+                  </a>
+                </h1>
+              </div>
+            </div>
+            <div class="uk-width-medium-3-6 uk-visible-medium">
+              <h2 class="fontSizeH3 color_white font-weight-bold m-0">中正大學</h2>
+              <h2 class="fontSizeH1 color_white font-weight-bold m-0">智慧化 活動暨報名系統</h2>
+            </div>
+            <div class="uk-width-1-3 uk-width-medium-1-6 uk-vertical-align uk-text-right uk-hidden-large">
+              <div class="uk-vertical-align-middle"><a href="#" aria-label="menu" aria-labelledby="#offcanvas" data-uk-offcanvas="{target:'#offcanvas', mode:'slide'}"><i class="uk-icon-bars uk-icon-medium color_white"></i></a></div>
+            </div>
+          </div>
+        </div>
+        <div class="pl-md-3 py-md-2 uk-width-large-3-4 uk-hidden-medium">
+          <div class="uk-grid uk-grid-small" data-uk-grid-margin>
+            <div class="uk-width-large-1-2">
+              <h2 class="fontSizeH3 color_primary font-weight-bold uk-visible-large">中正大學</h2>
+            </div>
+            <div class="uk-width-large-1-2">
+              
+                <nav>
+                  <ul class="topList list_horizontal list_vline uk-text-right uk-visible-large">
+                    <li><a class="hover_color_secondary" href="https://www.ccu.edu.tw/" title="學校首頁">學校首頁</a></li>
+                    <li><a class="hover_color_secondary" href="https://lib.ccu.edu.tw/" title="圖書館首頁">圖書館首頁</a></li>
+                    
+                      <li><a class="hover_color_secondary" href="/login/?next=" title="登入">登入</a></li>
+                    
+                  </ul>
+                </nav>
+              
+            </div>
+          </div>
+          <h2 class="fontSizeH1 color_primary font-weight-bold m-0 text-center text-md-left py-1">智慧化 活動暨報名系統</h2>
+        </div>
+      </div>
+    </div>
+    
+    <div id="offcanvas" class="uk-offcanvas">
+      <nav class="uk-offcanvas-bar bg_primary">
+        <ul class="uk-nav uk-nav-parent-icon uk-nav-offcanvas uk-text-contrast" data-uk-nav>
+          
+          <li class="uk-parent"><a href="#" title="活動分類">相關表單</a>
+             <ul class="uk-nav-sub">
+              
+              <li><a href="/media/localSettings_picture/acf53dcf-deab-46fc-b692-04fd8658a742.pdf" title="" target="_blank">參加者使用手冊</a></li>
+              
+              <li><a href="/media/localSettings_picture/a48ca870-7704-412d-b086-a49c0c2a906d.pdf" title="" target="_blank">管理者使用手冊</a></li>
+              
+              <li><a href="/media/localSettings_picture/f472812e-1944-4c88-9523-31eb74c7ee94.odt" title="" target="_blank">管理帳號申請表</a></li>
+              
+            </ul> 
+          </li>
+          
+          <li>
+            <a href="/" title="活動總覽">活動總覽</a>
+          </li>
+          <li class="uk-parent"><a href="#" title="活動分類">活動分類</a>
+             <ul class="uk-nav-sub">
+              
+              <li><a href="/event/search/?tab=1" title="教育學習  Education Learning">教育學習  Education Learning</a></li>
+              
+              <li><a href="/event/search/?tab=2" title="商業職場 Business workplace">商業職場 Business workplace</a></li>
+              
+              <li><a href="/event/search/?tab=3" title="學術研究 Academic Research">學術研究 Academic Research</a></li>
+              
+              <li><a href="/event/search/?tab=4" title="人文社會科學 Humanities and Social Sciences">人文社會科學 Humanities and Social Sciences</a></li>
+              
+              <li><a href="/event/search/?tab=5" title="自然科學 Natural sciences">自然科學 Natural sciences</a></li>
+              
+              <li><a href="/event/search/?tab=6" title="藝術文化 Art culture">藝術文化 Art culture</a></li>
+              
+              <li><a href="/event/search/?tab=7" title="自我探索 Self-exploration">自我探索 Self-exploration</a></li>
+              
+              <li><a href="/event/search/?tab=10" title="專業進修 Professional training">專業進修 Professional training</a></li>
+              
+            </ul> 
+          </li>
+          <li><a href="/news/" title="最新消息">最新消息</a></li>
+          <li><a href="/event/calendar/" title="行事曆">行事曆</a></li>
+          
+            <li><a href="/?status=pass" title="歷史活動">歷史活動</a></li>  
+            <li><a href="/login/?next=" title="登入">登入</a></li>
+          
+          
+          <li class="uk-nav-divider"></li>
+          <li><a href="https://www.ccu.edu.tw/" title="學校首頁">學校首頁</a></li>
+          <li><a href="https://lib.ccu.edu.tw/" title="圖書館首頁">圖書館首頁</a></li>   
+        </ul>
+      </nav>
+    </div>
+    <!-- #offcanvas -->
+    <div class="menuBar bg_primary uk-width-1-1">
+      <nav class="nav_dropdown_center color_secondary no_bg_white uk-text-center uk-text-contrast uk-visible-large">
+        
+        <div class="uk-button-dropdown" data-uk-dropdown>
+          <a class="fontSize1_2 font-weight-bold px-3 py-2" href="/" title="相關表單">相關表單</a>
+          <div class="border-0 rounded-0 p-0 uk-dropdown uk-dropdown-bottom">
+            <div class="p-3 bg_primary">
+              <ul class="uk-nav uk-nav-dropdown uk-text-contrast uk-text-left">
+                
+                <li><a class="hover_bg_secondary uk-dropdown-close" href="/media/localSettings_picture/acf53dcf-deab-46fc-b692-04fd8658a742.pdf" title="#" target="_blank"><i class="color_white fas fa-angle-right uk-margin-small-right uk-margin-small-right"></i>參加者使用手冊</a></li>
+                
+                <li><a class="hover_bg_secondary uk-dropdown-close" href="/media/localSettings_picture/a48ca870-7704-412d-b086-a49c0c2a906d.pdf" title="#" target="_blank"><i class="color_white fas fa-angle-right uk-margin-small-right uk-margin-small-right"></i>管理者使用手冊</a></li>
+                
+                <li><a class="hover_bg_secondary uk-dropdown-close" href="/media/localSettings_picture/f472812e-1944-4c88-9523-31eb74c7ee94.odt" title="#" target="_blank"><i class="color_white fas fa-angle-right uk-margin-small-right uk-margin-small-right"></i>管理帳號申請表</a></li>
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="uk-button-dropdown" data-uk-dropdown>
+          <a class="fontSize1_2 font-weight-bold px-3 py-2" href="/" title="活動總覽">活動總覽</a>
+        </div>
+        <div class="uk-button-dropdown" data-uk-dropdown>
+          <a class="fontSize1_2 font-weight-bold px-3 py-2" href="/" title="活動分類">活動分類</a>
+          <div class="border-0 rounded-0 p-0 uk-dropdown uk-dropdown-bottom">
+            <div class="p-3 bg_primary">
+              <ul class="uk-nav uk-nav-dropdown uk-text-contrast uk-text-left">
+                
+                <li><a class="hover_bg_secondary uk-dropdown-close" href="/event/search/?tab=1" title="#"><i class="color_white fas fa-angle-right uk-margin-small-right uk-margin-small-right"></i>教育學習  Education Learning</a></li>
+                
+                <li><a class="hover_bg_secondary uk-dropdown-close" href="/event/search/?tab=2" title="#"><i class="color_white fas fa-angle-right uk-margin-small-right uk-margin-small-right"></i>商業職場 Business workplace</a></li>
+                
+                <li><a class="hover_bg_secondary uk-dropdown-close" href="/event/search/?tab=3" title="#"><i class="color_white fas fa-angle-right uk-margin-small-right uk-margin-small-right"></i>學術研究 Academic Research</a></li>
+                
+                <li><a class="hover_bg_secondary uk-dropdown-close" href="/event/search/?tab=4" title="#"><i class="color_white fas fa-angle-right uk-margin-small-right uk-margin-small-right"></i>人文社會科學 Humanities and Social Sciences</a></li>
+                
+                <li><a class="hover_bg_secondary uk-dropdown-close" href="/event/search/?tab=5" title="#"><i class="color_white fas fa-angle-right uk-margin-small-right uk-margin-small-right"></i>自然科學 Natural sciences</a></li>
+                
+                <li><a class="hover_bg_secondary uk-dropdown-close" href="/event/search/?tab=6" title="#"><i class="color_white fas fa-angle-right uk-margin-small-right uk-margin-small-right"></i>藝術文化 Art culture</a></li>
+                
+                <li><a class="hover_bg_secondary uk-dropdown-close" href="/event/search/?tab=7" title="#"><i class="color_white fas fa-angle-right uk-margin-small-right uk-margin-small-right"></i>自我探索 Self-exploration</a></li>
+                
+                <li><a class="hover_bg_secondary uk-dropdown-close" href="/event/search/?tab=10" title="#"><i class="color_white fas fa-angle-right uk-margin-small-right uk-margin-small-right"></i>專業進修 Professional training</a></li>
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="uk-button-dropdown" data-uk-dropdown>
+          <a class="fontSize1_2 font-weight-bold px-3 py-2" href="/news/" title="最新消息">最新消息</a>
+        </div>
+          <div class="uk-button-dropdown" data-uk-dropdown>
+            <a class="fontSize1_2 font-weight-bold px-3 py-2" href="/event/calendar/" title="行事曆">行事曆</a>
+          </div>
+        
+          <div class="uk-button-dropdown" data-uk-dropdown>
+            <a class="fontSize1_2 font-weight-bold px-3 py-2" href="/login/?next=/my/" title="我的活動">我的活動</a>
+          </div> 
+          <div class="uk-button-dropdown" data-uk-dropdown>
+            <a class="fontSize1_2 font-weight-bold px-3 py-2" href="/?status=pass" title="歷史活動">歷史活動</a>
+          </div>                 
+        
+      </nav>
+    </div>
+    
+  </header>
+
+  <div class="bg_img">
+    
+  <div class="p-0 uk-container uk-container-center">
+    <div class="fullImageBG_slideshow">
+      <div class="uk-slidenav-position" data-uk-slideshow="{autoplay:true, autoplayInterval:'7000'}">
+        <ul class="uk-slideshow uk-overlay-active">
+          
+            
+              <li>
+                
+                  <div class="uk-cover-background" style="background-image: url(/media/slider_picture/c7fcf3d1-9fc4-4a0f-a479-a1e2ff1727fe.jpg);">
+                    <img class="uk-invisible" src="img/blank.gif" width="10" height="10" title="活動報名系統預設banner">
+                  </div>
+                 <a class="uk-overlay-panel" href="javascript:tabAction('#count','/event/mediaFile/10/');" title="活動報名系統預設banner" target="_blank"></a>
+                
+              </li>
+            
+          
+        </ul>
+        <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" title="#" aria-label="previous" data-uk-slideshow-item="previous"></a>
+        <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" title="#" aria-label="next" data-uk-slideshow-item="next"></a>
+        <ul class="uk-dotnav uk-dotnav-contrast uk-position-bottom uk-flex-center">
+          
+            
+              <li data-uk-slideshow-item="0" >
+                <a href="#" title="#" aria-label="Slide1"></a>
+              </li>
+            
+                
+        </ul>
+      </div>
+    </div>
+    <!-- .fullImageBG_slideshow -->
+
+    <div class="bg_secondary">
+      <form class="p-2 uk-form uk-container-center uk-width-large-4-5" action='/event/search/' method="get">
+        <div class="uk-grid uk-grid-small" data-uk-grid-margin>
+          <div class="uk-width-9-10 uk-width-small-9-10">
+            
+            <input class="border-0 uk-width-1-1" name="keywords" type="text" placeholder="">
+          </div>
+          <div class="uk-width-1-10 uk-vertical-align">
+            <div class="uk-vertical-align-middle">
+              <button class="fontSizeM1_4 text-light bg-transparent border-0 h-100 uk-width-1-1" aria-label="search" type="sumit">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="bg-light p-2">
+      <div class="uk-flex-center uk-flex-space-between uk-grid uk-grid-small" data-uk-margin>
+        <div class="icon"><a class="opacity hover:opacity-100" href="#"><img class="uk-responsive-width" src="/static/img/icon01.png" width="75" height="75" alt=""></a></div>
+        <div class="icon"><a class="opacity hover:opacity-100" href="#"><img class="uk-responsive-width" src="/static/img/icon02.png" width="75" height="75" alt=""></a></div>
+        <div class="icon"><a class="opacity hover:opacity-100" href="#"><img class="uk-responsive-width" src="/static/img/icon03.png" width="75" height="75" alt=""></a></div>
+        <div class="icon"><a class="opacity hover:opacity-100" href="#"><img class="uk-responsive-width" src="/static/img/icon04.png" width="75" height="75" alt=""></a></div>
+        <div class="icon"><a class="opacity hover:opacity-100" href="#"><img class="uk-responsive-width" src="/static/img/icon05.png" width="75" height="75" alt=""></a></div>
+        <div class="icon"><a class="opacity hover:opacity-100" href="#"><img class="uk-responsive-width" src="/static/img/icon06.png" width="75" height="75" alt=""></a></div>
+        <div class="icon"><a class="opacity hover:opacity-100" href="#"><img class="uk-responsive-width" src="/static/img/icon07.png" width="75" height="75" alt=""></a></div>
+        <div class="icon"><a class="opacity hover:opacity-100" href="#"><img class="uk-responsive-width" src="/static/img/icon08.png" width="75" height="75" alt=""></a></div>
+        <div class="icon"><a class="opacity hover:opacity-100" href="#"><img class="uk-responsive-width" src="/static/img/icon09.png" width="75" height="75" alt=""></a></div>
+        <div class="icon"><a class="opacity hover:opacity-100" href="#"><img class="uk-responsive-width" src="/static/img/icon10.png" width="75" height="75" alt=""></a></div>
+        <div class="icon"><a class="opacity hover:opacity-100" href="#"><img class="uk-responsive-width" src="/static/img/icon11.png" width="75" height="75" alt=""></a></div>
+        <div class="icon"><a class="opacity hover:opacity-100" href="#"><img class="uk-responsive-width" src="/static/img/icon12.png"  width="75" height="75" alt=""></a></div>
+        <div class="icon"><a class="opacity hover:opacity-100" href="#"><img class="uk-responsive-width" src="/static/img/icon13.png"  width="75" height="75" alt=""></a></div>
+        <div class="icon"><a class="opacity hover:opacity-100" href="#"><img class="uk-responsive-width" src="/static/img/icon14.png"  width="75" height="75" alt=""></a></div>
+        <div class="icon"><a class="opacity hover:opacity-100" href="#"><img class="uk-responsive-width" src="/static/img/icon15.png"  width="75" height="75" alt=""></a></div>
+        <div class="icon"><a class="opacity hover:opacity-100" href="#"><img class="uk-responsive-width" src="/static/img/icon16.png"  width="75" height="75" alt=""></a></div>
+        <div class="icon"><a class="opacity hover:opacity-100" href="#"><img class="uk-responsive-width" src="/static/img/icon17.png"  width="75" height="75" alt=""></a></div>
+      </div>
+    </div>
+  </div>
+  <div class="min_heightL300 py-3 bg_white uk-container uk-container-center">
+    <div class="uk-grid" data-uk-grid-margin>
+      <div class="uk-hidden-small uk-width-medium-3-10 uk-width-large-1-4 uk-width-xlarge-1-5">
+        <nav>
+          <ul class="nav_secondary uk-nav uk-nav-side uk-nav-parent-icon">
+            <li class="fontSizeM1_4 uk-nav-header"><i class="fas fa-th fa-fw"></i>活動總類</li>
+            
+              
+                
+                  <li >
+                    <a class="hover_color_secondary" href="/event/search/?tab=1">
+                      <i class="uk-icon-justify uk-icon-angle-double-right"></i>教育學習  Education Learning(22)
+                    </a>
+                  </li>
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+                  <li >
+                    <a class="hover_color_secondary" href="/event/search/?tab=2">
+                      <i class="uk-icon-justify uk-icon-angle-double-right"></i>商業職場 Business workplace(1)
+                    </a>
+                  </li>
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+                  <li >
+                    <a class="hover_color_secondary" href="/event/search/?tab=3">
+                      <i class="uk-icon-justify uk-icon-angle-double-right"></i>學術研究 Academic Research(0)
+                    </a>
+                  </li>
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+                  <li >
+                    <a class="hover_color_secondary" href="/event/search/?tab=4">
+                      <i class="uk-icon-justify uk-icon-angle-double-right"></i>人文社會科學 Humanities and Social Sciences(2)
+                    </a>
+                  </li>
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+                  <li >
+                    <a class="hover_color_secondary" href="/event/search/?tab=5">
+                      <i class="uk-icon-justify uk-icon-angle-double-right"></i>自然科學 Natural sciences(0)
+                    </a>
+                  </li>
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+                  <li >
+                    <a class="hover_color_secondary" href="/event/search/?tab=6">
+                      <i class="uk-icon-justify uk-icon-angle-double-right"></i>藝術文化 Art culture(4)
+                    </a>
+                  </li>
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+                  <li >
+                    <a class="hover_color_secondary" href="/event/search/?tab=7">
+                      <i class="uk-icon-justify uk-icon-angle-double-right"></i>自我探索 Self-exploration(19)
+                    </a>
+                  </li>
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+                  <li >
+                    <a class="hover_color_secondary" href="/event/search/?tab=10">
+                      <i class="uk-icon-justify uk-icon-angle-double-right"></i>專業進修 Professional training(1)
+                    </a>
+                  </li>
+                
+              
+            
+            
+              <li class="fontSizeM1_4 uk-nav-header"><i class="fas fa-calendar-check fa-fw"></i>日期搜尋</li>
+              <li ><a class="hover_color_secondary" href="/event/search/?time=1"><i class="uk-icon-justify uk-icon-angle-double-right"></i>本日活動(0)</a></li>
+              <li ><a class="hover_color_secondary" href="/event/search/?time=3"><i class="uk-icon-justify uk-icon-angle-double-right"></i>3日內活動(2)</a></li>
+              <li ><a class="hover_color_secondary" href="/event/search/?time=7"><i class="uk-icon-justify uk-icon-angle-double-right"></i>一週內活動(4)</a></li>
+              <li ><a class="hover_color_secondary" href="/event/search/?time=30"><i class="uk-icon-justify uk-icon-angle-double-right"></i>一個月的活動(19)</a></li>
+
+              <li class="fontSizeM1_4 uk-nav-header"><i class="fas fa-list fa-fw"></i>活動狀況</li>
+              <li ><a class="hover_color_secondary" href="/event/search/?time=join"><i class="uk-icon-justify uk-icon-angle-double-right"></i>接受報名中(45)</a></li>
+              <li ><a class="hover_color_secondary" href="/event/search/?time=now"><i class="uk-icon-justify uk-icon-angle-double-right"></i>活動進行中(1)</a></li>
+              <li ><a class="hover_color_secondary" href="/event/search/?time=pass"><i class="uk-icon-justify uk-icon-angle-double-right"></i>已截止報名(4)</a></li>
+            
+          </ul>
+        </nav>
+      </div>
+      <div class="uk-width-medium-7-10 uk-width-large-3-4 uk-width-xlarge-4-5">
+        <div class="uk-grid uk-grid-small uk-grid-width-1-3 uk-visible-small" data-uk-grid-margin>
+          <div>
+            <div class="w-100 uk-button-dropdown" data-uk-dropdown>
+              <button class="w-100 uk-button">活動總類 <i class="uk-icon-caret-down"></i></button>
+              <div class="uk-dropdown uk-dropdown-small">
+                <ul class="nav_secondary uk-nav uk-nav-dropdown">
+                  
+                  
+                  
+                    <li ><a href="/event/search/?tab=1">教育學習  Education Learning(22)</a></li>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                    <li ><a href="/event/search/?tab=2">商業職場 Business workplace(1)</a></li>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                    <li ><a href="/event/search/?tab=3">學術研究 Academic Research(0)</a></li>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                    <li ><a href="/event/search/?tab=4">人文社會科學 Humanities and Social Sciences(2)</a></li>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                    <li ><a href="/event/search/?tab=5">自然科學 Natural sciences(0)</a></li>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                    <li ><a href="/event/search/?tab=6">藝術文化 Art culture(4)</a></li>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                    <li ><a href="/event/search/?tab=7">自我探索 Self-exploration(19)</a></li>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                    <li ><a href="/event/search/?tab=10">專業進修 Professional training(1)</a></li>
+                  
+                  
+                  
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <div class="w-100 uk-button-dropdown" data-uk-dropdown>
+              <button class="w-100 uk-button">日期搜尋 <i class="uk-icon-caret-down"></i></button>
+              <div class="uk-dropdown uk-dropdown-small">
+                <ul class="nav_secondary uk-nav uk-nav-dropdown">
+                  <li ><a href="/event/search/?time=1">本日活動(0)</a></li>
+                  <li  ><a href="/event/search/?time=3">3日內活動(2)</a></li>
+                  <li  ><a href="/event/search/?time=7">一週內活動(4)</a></li>
+                  <li  ><a href="/event/search/?time=30">一個月的活動(19)</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="w-100 uk-button-dropdown" data-uk-dropdown>
+              <button class="w-100 uk-button">活動狀況 <i class="uk-icon-caret-down"></i></button>
+              <div class="uk-dropdown uk-dropdown-small">
+                <ul class="nav_secondary uk-nav uk-nav-dropdown">
+                  <li ><a href="/event/search/?time=join">接受報名中(45)</a></li>
+                  <li ><a href="/event/search/?time=now">活動進行中(1)</a></li>
+                  <li ><a href="/event/search/?time=pass">已截止報名(4)</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
+          
+
+<ul class="pagination_secondary text_center uk-pagination">
+  
+  
+    
+      
+        <li class="uk-active">
+          <span>1</span>
+        </li>
+      
+    
+  
+    
+      
+        <li>
+          <a href="?page=2">2</a>
+        </li>
+      
+    
+  
+    
+      
+        <li>
+          <a href="?page=3">3</a>
+        </li>
+      
+    
+  
+    
+      
+        <li>
+          <a href="?page=4">4</a>
+        </li>
+      
+    
+  
+    
+      
+        <li>
+          <a href="?page=5">5</a>
+        </li>
+      
+    
+  
+
+  
+    <li><a href="?page=2" target="_self"><i class="uk-icon-angle-right"></i></a></li>
+    <li><a href="?page=5" target="_self"><i class="uk-icon-angle-double-right"></i></a></li>
+  
+</ul>
+
+
+          <ul class="list_dotline list_marginM mt-2 uk-list uk-list-line">
+            
+              <li>
+                <a class="remove_underline bg_hover_blackOpacity05 w-100" href="/event/detail/list/1219/" title="112學年度第2學期 教學助理認證培訓研習會(2月23日星期五場次)">
+                  <div class="uk-grid uk-grid-small uk-grid-match" data-uk-grid-match="{target:'>div'}" data-uk-grid-margin>
+                    <div class="uk-width-small-1-3 uk-width-medium-1-4 uk-width-xlarge-1-5">
+
+                      <div class="uk-cover-background uk-height-1-1 min_height100" style="background-image: url('/media/event_picture/d7c13dd4-b487-4ada-9ba2-f30e1f10d42e.jpg');">                      
+                        <img class="uk-invisible" src="/static/img/blank.gif" alt="#" title="#">
+                      </div>
+                    </div>
+                    <div class="uk-width-small-2-3 uk-width-medium-3-4 uk-width-xlarge-4-5">
+                      <h3 class="fontSizeH3 color_secondary font-weight-bold uk-margin-small">112學年度第2學期 教學助理認證培訓研習會(2月23日星期五場次)</h3>
+                      <h4 class="fontSizeH5 font-weight-bold uk-margin-small">
+                        2024/02/23 13:00 ~ 2024/02/23 17:30
+                      </h4>
+                      <p class="urlFix uk-text-truncate uk-margin-small">
+                        112學年度第2學期 教學助理認證培訓研習會(2月23日星期五場次)
+
+
+	研習時間：下午1點至5點30分 (12點30分開始報到) 
+	參加對象：未獲TA認證之在校學生
+	研習方式：實體課程
+	地點：共同教室大樓階梯教室305教室
+	報名時間：即日起至2月21日(三)截止
+	名額：正取200人/場
+	研習課程內容：請參考附件海報之研習課程表
+	*本研習會列入微學分學習活動*
+
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="remove_underline bg_hover_blackOpacity05 w-100" href="/event/detail/list/1220/" title="112學年度第2學期 教學助理認證培訓研習會(2月24日星期六場次)">
+                  <div class="uk-grid uk-grid-small uk-grid-match" data-uk-grid-match="{target:'>div'}" data-uk-grid-margin>
+                    <div class="uk-width-small-1-3 uk-width-medium-1-4 uk-width-xlarge-1-5">
+
+                      <div class="uk-cover-background uk-height-1-1 min_height100" style="background-image: url('/media/event_picture/3c634412-a840-4450-ad0f-863ec7b58cda.jpg');">                      
+                        <img class="uk-invisible" src="/static/img/blank.gif" alt="#" title="#">
+                      </div>
+                    </div>
+                    <div class="uk-width-small-2-3 uk-width-medium-3-4 uk-width-xlarge-4-5">
+                      <h3 class="fontSizeH3 color_secondary font-weight-bold uk-margin-small">112學年度第2學期 教學助理認證培訓研習會(2月24日星期六場次)</h3>
+                      <h4 class="fontSizeH5 font-weight-bold uk-margin-small">
+                        2024/02/24 13:00 ~ 2024/02/24 17:30
+                      </h4>
+                      <p class="urlFix uk-text-truncate uk-margin-small">
+                        112學年度第2學期 教學助理認證培訓研習會(2月24日星期五場次)
+
+
+	研習時間：下午1點至5點30分 (12點30分開始報到) 
+	參加對象：未獲TA認證之在校學生
+	研習方式：皆為實體課程
+	地點：共同教室大樓階梯教室305教室
+	報名時間：即日起至2月21日(三)截止
+	名額：正取200人/場
+	研習課程內容：請參考附件海報之研習課程表
+	*本研習會列入微學分學習活動*
+
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="remove_underline bg_hover_blackOpacity05 w-100" href="/event/detail/list/507/" title="2024年測試">
+                  <div class="uk-grid uk-grid-small uk-grid-match" data-uk-grid-match="{target:'>div'}" data-uk-grid-margin>
+                    <div class="uk-width-small-1-3 uk-width-medium-1-4 uk-width-xlarge-1-5">
+
+                      <div class="uk-cover-background uk-height-1-1 min_height100" style="background-image: url('/media/localSettings_picture/83b422d1-d3ae-4ef6-8c85-f0fe7cef3abe.png');">                      
+                        <img class="uk-invisible" src="/static/img/blank.gif" alt="#" title="#">
+                      </div>
+                    </div>
+                    <div class="uk-width-small-2-3 uk-width-medium-3-4 uk-width-xlarge-4-5">
+                      <h3 class="fontSizeH3 color_secondary font-weight-bold uk-margin-small">2024年測試</h3>
+                      <h4 class="fontSizeH5 font-weight-bold uk-margin-small">
+                        2024/02/25 14:00 ~ 2024/02/25 14:30
+                      </h4>
+                      <p class="urlFix uk-text-truncate uk-margin-small">
+                        2024年測試
+
+測試期間，請勿嘗試。
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="remove_underline bg_hover_blackOpacity05 w-100" href="/event/detail/list/1259/" title="【圖書館電子資源教育訓練】113.2.29 外文系">
+                  <div class="uk-grid uk-grid-small uk-grid-match" data-uk-grid-match="{target:'>div'}" data-uk-grid-margin>
+                    <div class="uk-width-small-1-3 uk-width-medium-1-4 uk-width-xlarge-1-5">
+
+                      <div class="uk-cover-background uk-height-1-1 min_height100" style="background-image: url('/media/localSettings_picture/e43d28a1-9850-49cd-916a-d03fb59b7ee1.png');">                      
+                        <img class="uk-invisible" src="/static/img/blank.gif" alt="#" title="#">
+                      </div>
+                    </div>
+                    <div class="uk-width-small-2-3 uk-width-medium-3-4 uk-width-xlarge-4-5">
+                      <h3 class="fontSizeH3 color_secondary font-weight-bold uk-margin-small">【圖書館電子資源教育訓練】113.2.29 外文系</h3>
+                      <h4 class="fontSizeH5 font-weight-bold uk-margin-small">
+                        2024/02/29 10:00 ~ 2024/02/29 11:00
+                      </h4>
+                      <p class="urlFix uk-text-truncate uk-margin-small">
+                        一、課程時間：113年2月29日（四），10：00 - 11：00
+
+二、上課地點：圖書館8樓814教室（入館後，搭乘電梯至8樓，電梯出口左側）
+
+三、備註：可自備筆電同步操作、練習。
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="remove_underline bg_hover_blackOpacity05 w-100" href="/event/detail/list/1221/" title="National Chung Cheng University  Teaching Assistant Certification Training Program  Spring 2024(Date : Friday March 1, 2024)">
+                  <div class="uk-grid uk-grid-small uk-grid-match" data-uk-grid-match="{target:'>div'}" data-uk-grid-margin>
+                    <div class="uk-width-small-1-3 uk-width-medium-1-4 uk-width-xlarge-1-5">
+
+                      <div class="uk-cover-background uk-height-1-1 min_height100" style="background-image: url('/media/event_picture/ed1cda21-3d28-4794-9baa-8f999c0190d2.jpg');">                      
+                        <img class="uk-invisible" src="/static/img/blank.gif" alt="#" title="#">
+                      </div>
+                    </div>
+                    <div class="uk-width-small-2-3 uk-width-medium-3-4 uk-width-xlarge-4-5">
+                      <h3 class="fontSizeH3 color_secondary font-weight-bold uk-margin-small">National Chung Cheng University  Teaching Assistant Certification Training Program  Spring 2024(Date : Friday March 1, 2024)</h3>
+                      <h4 class="fontSizeH5 font-weight-bold uk-margin-small">
+                        2024/03/01 13:00 ~ 2024/03/01 17:30
+                      </h4>
+                      <p class="urlFix uk-text-truncate uk-margin-small">
+                        National Chung Cheng University 
+
+Teaching Assistant Certification Training Program
+
+&nbsp;Spring 2024
+
+&nbsp;&ldquo;Teaching Assistant (TA) Certification Training Program&rdquo;, held by the Center for Teaching and Learning Development, aims for the promotion of the teaching assistance effectiveness of the &ldquo;English as Medium of Instruction&rdquo; (EMI) course. It takes place at the beginning of each semester. This training will also provide the trainees with useful skills of teaching assistance and the methods for counseling students of EMI courses.
+
+Teaching Assistant Certification Training Program Information：
+
+
+	Date : Friday March 1, 2024
+	Time : 13:00 to 17:30(Registration starts at 12:30)
+	Participant：Current students who have not received TA training certification, and are suggested to possess upper-intermediate level of English (CEFR B2 level).
+	Venue：R305, Common Class Building, CCU
+	*This TA Certification Training Program is recognized as a Micro Credits learning activity.*
+
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="remove_underline bg_hover_blackOpacity05 w-100" href="/event/detail/list/1197/" title="113/03/01身體組成分析儀檢測">
+                  <div class="uk-grid uk-grid-small uk-grid-match" data-uk-grid-match="{target:'>div'}" data-uk-grid-margin>
+                    <div class="uk-width-small-1-3 uk-width-medium-1-4 uk-width-xlarge-1-5">
+
+                      <div class="uk-cover-background uk-height-1-1 min_height100" style="background-image: url('/media/event_picture/76734e91-3ba2-414a-878e-c39a08e15741.jpg');">                      
+                        <img class="uk-invisible" src="/static/img/blank.gif" alt="#" title="#">
+                      </div>
+                    </div>
+                    <div class="uk-width-small-2-3 uk-width-medium-3-4 uk-width-xlarge-4-5">
+                      <h3 class="fontSizeH3 color_secondary font-weight-bold uk-margin-small">113/03/01身體組成分析儀檢測</h3>
+                      <h4 class="fontSizeH5 font-weight-bold uk-margin-small">
+                        2024/03/01 14:00 ~ 2024/03/01 16:00
+                      </h4>
+                      <p class="urlFix uk-text-truncate uk-margin-small">
+                        瞭解你的身體組成，客製化你的體能活動!
+
+預約原則
+
+1. 每學期每人以預約一次為限，額滿為止
+
+2. 預約當日如無法前來，僅供更換一次時間 
+
+3. 若再無法前來，則取消當學期預約資格
+
+檢測日期/地點
+
+1. 3-5月初 &amp; 11-12月(依公告日期為準)
+
+&nbsp;2. 當月每周五14:00-16:00於衛保組檢測
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="remove_underline bg_hover_blackOpacity05 w-100" href="/event/detail/list/1244/" title="2024徵才月「企業說明會」共34場">
+                  <div class="uk-grid uk-grid-small uk-grid-match" data-uk-grid-match="{target:'>div'}" data-uk-grid-margin>
+                    <div class="uk-width-small-1-3 uk-width-medium-1-4 uk-width-xlarge-1-5">
+
+                      <div class="uk-cover-background uk-height-1-1 min_height100" style="background-image: url('/media/localSettings_picture/b6eb0c2a-bf1d-4a95-a87c-33c315cf5bca.png');">                      
+                        <img class="uk-invisible" src="/static/img/blank.gif" alt="#" title="#">
+                      </div>
+                    </div>
+                    <div class="uk-width-small-2-3 uk-width-medium-3-4 uk-width-xlarge-4-5">
+                      <h3 class="fontSizeH3 color_secondary font-weight-bold uk-margin-small">2024徵才月「企業說明會」共34場</h3>
+                      <h4 class="fontSizeH5 font-weight-bold uk-margin-small">
+                        2024/03/05 12:00 ~ 2024/03/26 15:00
+                      </h4>
+                      <p class="urlFix uk-text-truncate uk-margin-small">
+                        請至徵才月官網報名
+
+
+各場次好康禮：企業提供之餐點、餐券、摸彩、有獎徵答獎品等(陸續增加中)
+
+加碼禮：凡報名參加第三場次(14:10~15:00)者，前40名入場同學加贈50元餐飲券一張！
+
+徵才月集點兌換紀念品：參加一場次企業說明會可獲得1點，累積5點可換精美紙膠帶與便利貼！！
+
+
+
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="remove_underline bg_hover_blackOpacity05 w-100" href="/event/detail/list/1223/" title="與重要的人好好說話(包含自己)  工作坊">
+                  <div class="uk-grid uk-grid-small uk-grid-match" data-uk-grid-match="{target:'>div'}" data-uk-grid-margin>
+                    <div class="uk-width-small-1-3 uk-width-medium-1-4 uk-width-xlarge-1-5">
+
+                      <div class="uk-cover-background uk-height-1-1 min_height100" style="background-image: url('/media/localSettings_picture/c13890e1-bcd6-4bf4-abe3-a0847d70aae5.png');">                      
+                        <img class="uk-invisible" src="/static/img/blank.gif" alt="#" title="#">
+                      </div>
+                    </div>
+                    <div class="uk-width-small-2-3 uk-width-medium-3-4 uk-width-xlarge-4-5">
+                      <h3 class="fontSizeH3 color_secondary font-weight-bold uk-margin-small">與重要的人好好說話(包含自己)  工作坊</h3>
+                      <h4 class="fontSizeH5 font-weight-bold uk-margin-small">
+                        2024/03/08 13:00 ~ 2024/03/08 17:00
+                      </h4>
+                      <p class="urlFix uk-text-truncate uk-margin-small">
+                        　　你覺得心裡怪怪的，但說不出來？
+　　你曾覺得沒人了解你話語背後的苦心？
+　　你是否為了怕衝突、怕跟別人不一樣而壓抑了內在真實想法？
+
+&nbsp; &nbsp; &nbsp; &nbsp;現在&hellip;.想好好理解、安頓自己，
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;現在&hellip;.想學習聽懂、被懂。
+
+&nbsp;
+
+從這工作坊你會學到：
+
+
+	專注於人際互動中真正重要的事情
+	深入傾聽別人的真正問題、了解彼此需求
+	減少在進行困難對話期間出現的焦慮
+	說出真心話，也維繫優質的人際關係
+
+
+&nbsp;
+
+對象：本校學生
+
+時間：113.3.8(五) 13:00~17:00 提供晚餐
+
+地點：活動中心306會議室
+
+講師：鄺麗君(Lisa Kuang ) 美國非暴力溝通中心（CNVC）認證之培訓師
+
+&nbsp;
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="remove_underline bg_hover_blackOpacity05 w-100" href="/event/detail/list/1199/" title="113/03/08身體組成分析儀檢測">
+                  <div class="uk-grid uk-grid-small uk-grid-match" data-uk-grid-match="{target:'>div'}" data-uk-grid-margin>
+                    <div class="uk-width-small-1-3 uk-width-medium-1-4 uk-width-xlarge-1-5">
+
+                      <div class="uk-cover-background uk-height-1-1 min_height100" style="background-image: url('/media/event_picture/5a990937-d85b-469c-a98a-aee44907e2f8.jpg');">                      
+                        <img class="uk-invisible" src="/static/img/blank.gif" alt="#" title="#">
+                      </div>
+                    </div>
+                    <div class="uk-width-small-2-3 uk-width-medium-3-4 uk-width-xlarge-4-5">
+                      <h3 class="fontSizeH3 color_secondary font-weight-bold uk-margin-small">113/03/08身體組成分析儀檢測</h3>
+                      <h4 class="fontSizeH5 font-weight-bold uk-margin-small">
+                        2024/03/08 14:00 ~ 2024/03/08 16:00
+                      </h4>
+                      <p class="urlFix uk-text-truncate uk-margin-small">
+                        瞭解你的身體組成，客製化你的體能活動!
+
+預約原則
+
+1. 每學期每人以預約一次為限，額滿為止
+
+2. 預約當日如無法前來，僅供更換一次時間 
+
+3. 若再無法前來，則取消當學期預約資格
+
+檢測日期/地點
+
+1. 3-5月初 &amp; 11-12月(依公告日期為準)
+
+&nbsp;2. 當月每周五14:00-16:00於衛保組檢測
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="remove_underline bg_hover_blackOpacity05 w-100" href="/event/detail/list/1251/" title="3/11(一)  花草創世界押花展-開幕茶會暨講座">
+                  <div class="uk-grid uk-grid-small uk-grid-match" data-uk-grid-match="{target:'>div'}" data-uk-grid-margin>
+                    <div class="uk-width-small-1-3 uk-width-medium-1-4 uk-width-xlarge-1-5">
+
+                      <div class="uk-cover-background uk-height-1-1 min_height100" style="background-image: url('/media/event_picture/4fceb5a4-02df-41ce-92fb-7e5d0233b4b3.jpg');">                      
+                        <img class="uk-invisible" src="/static/img/blank.gif" alt="#" title="#">
+                      </div>
+                    </div>
+                    <div class="uk-width-small-2-3 uk-width-medium-3-4 uk-width-xlarge-4-5">
+                      <h3 class="fontSizeH3 color_secondary font-weight-bold uk-margin-small">3/11(一)  花草創世界押花展-開幕茶會暨講座</h3>
+                      <h4 class="fontSizeH5 font-weight-bold uk-margin-small">
+                        2024/03/11 10:00 ~ 2024/03/11 12:00
+                      </h4>
+                      <p class="urlFix uk-text-truncate uk-margin-small">
+                        押花保留了植物蓬勃的生命力及美麗的姿態，藝術家的慧心巧手則賦予押花藝術畫作嶄新的面貌。押花藝術家黃鈺婷從事押花創作20餘年，擅長利用各種自然植物素材作為創作媒材，一路走來，伴隨花草餘香，長年致力於推廣押花藝術之美。本次開幕茶會特邀黃鈺婷女士，分享多年來創作押花藝術的理念與故事。
+
+
+
+【藝術家簡介】
+押花藝術家黃鈺婷老師從事押花創作20餘年，擅長利用各種自然植物素材作為創作媒材，曾獲日本押花創造展準大賞獎及永久免審獎。
+除了藝術創作外，更在各地擔任押花講師及教學，推廣押花藝術不遺餘力。
+其作品以不同色調的自然植物素材，包含花瓣、葉片、苔蘚、種子等，架構出精緻細膩的畫作，讓植物的本體以另一種形式展現出令人驚艷的風采。
+
+【活動資訊】
+活動名稱：花草創世界-開幕茶會暨講座
+時間：113.03.11(一) 10:00~12:00
+地點：圖書館1F多元創意教室 (路線指引影片)
+
+🍰開幕茶會敬備茶點，歡迎蒞臨與會‼️
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            
+          </ul>
+          
+
+<ul class="pagination_secondary text_center uk-pagination">
+  
+  
+    
+      
+        <li class="uk-active">
+          <span>1</span>
+        </li>
+      
+    
+  
+    
+      
+        <li>
+          <a href="?page=2">2</a>
+        </li>
+      
+    
+  
+    
+      
+        <li>
+          <a href="?page=3">3</a>
+        </li>
+      
+    
+  
+    
+      
+        <li>
+          <a href="?page=4">4</a>
+        </li>
+      
+    
+  
+    
+      
+        <li>
+          <a href="?page=5">5</a>
+        </li>
+      
+    
+  
+
+  
+    <li><a href="?page=2" target="_self"><i class="uk-icon-angle-right"></i></a></li>
+    <li><a href="?page=5" target="_self"><i class="uk-icon-angle-double-right"></i></a></li>
+  
+</ul>
+
+
+        
+      </div>
+    </div>
+  </div>
+  <span id="count"></span>
+
+  </div>
+  <div id="FLS-Bot"></div>
+  <footer class="bg_darkGrey_dotPattern p-3">
+    <div class="uk-container uk-container-center">
+      <div class="d-flex flex-column flex-md-row justify-content-center">
+        <div class="text-center text-md-left mx-md-2 mx-lg-4">
+          <span class="d-block">版權所有 © <span>中正大學</span></span>
+          <span class="d-block">電子郵件：<a class="linkline hover_color_white" href="mailto:libis@ccu.edu.tw">libis@ccu.edu.tw</a></span>
+        </div>
+        <div class="text-center text-md-left mx-md-2 mx-lg-4">
+          <span class="d-block">聯絡地址：<a class="linkline hover_color_white" href="#">621301 嘉義縣民雄鄉大學路一段168號 　　　　更新日期：2023.10.30</a></span>
+          <span class="d-block">聯絡電話：<a class="linkline hover_color_white" href="#">(886)-5-272-0411分機 15603</a></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+  
+  <script src="/static/js/jquery-3.5.1.min.js"></script>
+  <script src="/static/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/js/uikit.min.js"></script>
+  <script src="/static/js/core/alert.min.js"></script>
+  <script src="/static/js/core/scrollspy.min.js"></script>
+  <script src="/static/js/core/smooth-scroll.min.js"></script>
+  <script src="/static/js/core/dropdown.min.js"></script>
+  <script src="/static/js/core/modal.min.js"></script>
+  <script src="/static/js/core/tab.min.js"></script>
+  <script src="/static/js/components/accordion.min.js"></script>
+  <script src="/static/js/components/grid.min.js"></script>
+  <script src="/static/js/components/lightbox.min.js"></script>
+  <!-- <script src="/static/js/components/sticky.min.js"></script> -->
+  <script src="/static/js/components/slider.min.js"></script>
+  <script src="/static/js/components/slideset.min.js"></script>
+  <script src="/static/js/components/slideshow.min.js"></script>
+  <script src="/static/js/components/slideshow-fx.min.js"></script>
+  <script src="/static/js/fontawesome-5.2.0-all.min.js"></script>
+  <script src="/static/js/monthly.js"></script>
+  <script src="/static/js/mobile-chrome-vh-fix.js"></script>
+  <script src="/static/js/script.js"></script>
+  <script src="https://sug.lib.ccu.edu.tw/static/bot/build/asset/FLSChat.min.js?v=202209221041"></script>
+  <script type="text/javascript">
+    new FLSChatCustom().init();
+  </script>
+  
+  
+  <script type="text/javascript">
+    function tabAction(result, url) {
+      url = encodeURI(url);
+      url = url.replace(/%20&%20/g, "%20%26%20");
+      $.get(url, {}, function(data) {$(result).html(data); });
+    }
+  </script>
+
+  
+</body>
+
+</html>

@@ -1,0 +1,6 @@
+channel_access_token=
+yOkdTSG1hnXURevERb5vOr6XtpD5XB0DDtFFgNm15iip+wyDHBMSSMopPf9N9/64hahzVouW76IuPxXThQixR2NlSAMZ8XpzuW/hXC0TCvarYj05OPzOSKirOVYQu+Zye/ftDFPirj0ND85Yllne5AdB04t89/1O/w1cDnyilFU=
+id =
+U60918c5473c3e542f9f77173baf01c3e
+Channel secret=
+753b5996c0b878c70f7de2601b55cb03
