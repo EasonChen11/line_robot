@@ -1,3 +1,6 @@
+# 導入Discord.py模組
+import re
+import discord
 import requests
 import os
 from bs4 import BeautifulSoup
@@ -6,13 +9,8 @@ import time
 import pandas as pd
 from tqdm import tqdm
 from datetime import datetime,timedelta
-from linebot import LineBotApi
-from linebot.models import FlexSendMessage
-from linebot.models import TextSendMessage
 
-
-
-class Reptile():
+class Reptile:
     def __init__(self, start_page):
         self.all_class = []
         self.url = "https://events.lib.ccu.edu.tw/"
@@ -27,7 +25,7 @@ class Reptile():
             self.save_csv()
         else:
             print("Using the existing course.csv...")
-            self.load_data()
+            self.load_csv()
 
     def determine_page_count_and_crawl(self):
         page = self.start_page
@@ -126,15 +124,17 @@ class Reptile():
             return True
         return False
 
-    def load_data(self):
+    def load_csv(self):
         df = pd.read_csv(self.file_path)
         self.all_class = df.values.tolist()
 
     def save_csv(self):
+        # sort by Active Time
+        self.all_class.sort(key=lambda x: datetime.strptime(x[2].split(" ")[0], '%Y/%m/%d'))
         df = pd.DataFrame(self.all_class, columns = ['label','Title', 'Active Time', 'Sign Up Time', 'URL'])
         df.to_csv(self.file_path, index=False, encoding='utf-8-sig')
 
-class Timer():
+class Timer:
     def __init__(self):
             # 给定的时间段
         self.given_time_ranges = {
@@ -183,75 +183,88 @@ class Timer():
         # 检查是否与任何给定的时间段重叠
         if any(self.is_overlap((start, end), (dataset_start.time(), dataset_end.time())) for start, end in given_time_ranges_dt):
             return True
+    def check_weekday(self,dataset_time_range,limit):
+        dataset_time_range, weekday = dataset_time_range.split(" (")
+        dataset_start, dataset_end = self.dataset_time_range_parse(dataset_time_range)
+        date = datetime(dataset_start.year, dataset_start.month, dataset_start.day)
+        active_weekday = date.weekday()
+        return active_weekday in limit
 
-
-class LINE(Reptile):
-    def __init__(self, start_page):
-        super().__init__(start_page)
-        self.channel_access_token='yOkdTSG1hnXURevERb5vOr6XtpD5XB0DDtFFgNm15iip+wyDHBMSSMopPf9N9/64hahzVouW76IuPxXThQixR2NlSAMZ8XpzuW/hXC0TCvarYj05OPzOSKirOVYQu+Zye/ftDFPirj0ND85Yllne5AdB04t89/1O/w1cDnyilFU='
-        self.user_id='U60918c5473c3e542f9f77173baf01c3e'
-        self.line_bot_api = LineBotApi(self.channel_access_token)
-        self.send_message()
+class DiscordBot(Reptile):
+    def __init__(self):
+        super().__init__(start_page=1)
+        self.intents = discord.Intents.default()
+        self.token = "MTIxMzM4MjMyODE3NzY2NDAwMA.GeIvJT.vGLEKLs3GwQu33oI4d8m7DFMNFlrzmfCkokj9Q"
+        self.intents.message_content = True
+        self.client = discord.Client(intents = self.intents)
+            # 在初始化過程中綁定事件處理器
+        self.client.event(self.on_ready)
+        self.client.event(self.on_message)
+        # use markdown to make the introduction more beautiful
+        self.introduction = """
+歡迎使用本機器人，本機器人是用來查詢國立中正大學的活動資訊，請輸入指令`! introduction`以獲得更多資訊。
+本機器人支援的指令如下：
+* `! introduction`: 獲得機器人的簡介
+* `! event`: 查詢所有活動
+* `! event [1-7] [1-7] ...`: 查詢指定星期的活動，例如`! event 1 3 5`可以查詢周一、周三和周五的活動
+使用愉快！
+        """
+    async def on_ready(self):
+        print(f"目前登入身份 --> {self.client.user}")
+        # send introduction
     
-    def send_message(self):
-        time_message ="美好的一天"+ datetime.now().strftime("%Y/%m/%d %H:%M")+"以下是可以報名的活動："
-        self.line_bot_api.push_message(self.user_id, TextSendMessage(time_message))
+    async def on_message(self, message):
+            if message.author == self.client.user:
+                return
+            # user input introduction send markdown introduction
+            if message.content == "! introduction":
+                await message.channel.send(self.introduction)
+                return
+# 假設當收到特定訊息時，發送嵌入的資訊
+            embeds = []
 
-        for i in self.all_class:
-            flex_content = {
-                "type": "bubble",
-                "body": {
-                    "type": "box",
-                    "layout": "vertical",
-                    "contents": [
-                        {
-                            "type": "text",
-                            "text": i[0] + i[1],
-                            "weight": "bold",
-                            "size": "md",
-                            "wrap": True  # 啟用自動換行
-                        },
-                        {
-                            "type": "text",
-                            "text": "活動主題：" + i[1],
-                            "margin": "md",
-                            "wrap": True  # 啟用自動換行
-                        },
-                        {
-                            "type": "text",
-                            "text": "活動時間：" + i[2],
-                            "margin": "md",
-                            "wrap": True  # 啟用自動換行
-                        },
-                        {
-                            "type": "text",
-                            "text": "報名時間：" + i[3],
-                            "margin": "md",
-                            "wrap": True  # 啟用自動換行
-                        },
-                        {
-                            "type": "button",
-                            "action": {
-                                "type": "uri",
-                                "label": "活動連結",
-                                "uri": i[4]
-                            },
-                            "style": "primary",
-                            "margin": "md"
-                        }
-                    ]
-                }
-            }
-            self.line_bot_api.push_message(self.user_id, FlexSendMessage(alt_text=i[0] + i[1], contents=flex_content))
-        self.line_bot_api.push_message(self.user_id, TextSendMessage(text="總共有"+str(self.get_title_length())+"個活動可以報名"))
+            # 使用正则表达式匹配命令和参数
+            # 这个正则表达式支持指令前后有一个或多个空格，以及可选的数字参数
+            cmd_pattern = re.compile(r"^!\sevent(?:\s+([1-7](?:\s+[1-7]){0,6}))?$")
+            match = cmd_pattern.match(message.content)
+            if match:
+                # 如果存在参数，则将参数字符串分割为列表，否则为空列表
+                args_str = match.group(1)
+                args = args_str.split() if args_str else []
+                args = [int(i)-1 for i in args]# 輸入是周一到周日，但是程式是0到6
+                args= set(args)
+                print(args)
+                if len(args) == 0:
+                    embeds = self.package_message([0,1,2,3,4,5,6])
+                else:
+                    embeds = self.package_message(args)
+            else:
+                await message.channel.send("請輸入正確指令")
+                return
+            total_event = 0
+            for information in embeds:
+                await message.channel.send(embed=information)
+                total_event += 1
+            await message.channel.send("總共有"+str(total_event)+"筆資料")
 
-            # report_content = """
-            # 【"""+i[0]+i[1]+"""】
-            # 活動主題："""+i[1]+"""
-            # 活動時間："""+i[2]+"""
-            # 報名時間："""+i[3]+"""
-            # 活動連結："""+i[4]+"""
-            # """
-            # self.line_bot_api.push_message(self.user_id, TextSendMessage(text=report_content))
+    def package_message(self,limit):
+        embeds = []
+        messages = [i for i in self.all_class if self.timer_operation.check_weekday(i[2],limit)]
+        for i in messages:
+            embed = discord.Embed(
+                title=i[0]+i[1],
+                url=i[4],
+                color=0x5dade2  # 可以選擇一個顏色
+            )
+            embed.add_field(name="活動時間", value=i[2], inline=False)
+            embed.add_field(name="報名時間", value=i[3], inline=False)
+            embeds.append(embed)
+        return embeds
+    def run(self):
+        self.client.run(self.token)
 
-line = LINE(start_page=1)
+
+if __name__ == "__main__":
+    # reptile = Reptile(start_page=1)
+    discord_bot = DiscordBot()
+    discord_bot.run()
