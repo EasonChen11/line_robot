@@ -219,6 +219,13 @@ class DiscordBot(Reptile):
             # user input introduction send markdown introduction
             if message.content == "! introduction":
                 await message.channel.send(self.introduction)
+                if self.is_update_needed(hours=12):
+                    print("Running the crawler to update course.csv...")
+                    self.determine_page_count_and_crawl()
+                    self.save_csv()
+                else:
+                    print("Using the existing course.csv...")
+                    self.load_csv()
                 return
 # 假設當收到特定訊息時，發送嵌入的資訊
             embeds = []
